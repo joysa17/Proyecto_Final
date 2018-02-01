@@ -1,0 +1,27 @@
+<h2 align="center">Ingresar</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field" align="center">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field" align="center">
+    <%= f.label :contraseña %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field" align="center">
+      <%= f.check_box :remember_me %>
+      <%= f.label :recuerdame %>
+    </div>
+  <% end -%>
+
+  <div class="actions" align="center">
+    <%= f.submit "Ingresar" %>
+  </div>
+<% end %>
+ <div align="center">
+<%= render "devise/shared/links" %>
+</div>
