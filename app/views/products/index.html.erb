@@ -1,0 +1,24 @@
+<h1>Productos</h1>
+<div class="container">
+	<div class="row">
+	 <% @products.each_slice(4) do |row| %>
+	  <% row.each do |product|%>
+		  <div class="col-md-3">
+		  	<div class="card">
+		  	 <%= image_tag product.photo, size: '200x200' %>
+		  	  <div class="body">			 
+				 <h5><%= product.name%></h5>
+				 <p><%= product.price %></p>
+				 <%= link_to "comprar", product_orders_path(product), class: 'btn btn-success', method: :post %>
+			  </div>
+			</div>
+	       </div>
+	  	  <% end %>
+	  	<div class="w-100" style="margin-top:20px"></div>
+	  <% end %>
+	</div>
+</div>
+
+<footer>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.393649757302!2d-70.62057344954661!3d-33.4390493042183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf7f0bf2766b%3A0x3b9d62e2ef6661e1!2sJos%C3%A9+Miguel+Claro+1074%2C+Providencia%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses-419!2scl!4v1520093667876" width="400" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+</footer>
