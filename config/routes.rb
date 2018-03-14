@@ -1,11 +1,25 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'orders/create'
 
  resources :products, only: :index do
  	resources :orders, only: :create
  end
 
- resources :orders, only: :index
+ resources :orders, only: :index do
+ 	collection do
+ 		get 'clean'
+ 		get 'payed'
+ 	end
+ end
+
+ resources :billings, only: [:index] do
+ 	collection do
+ 		get 'pre_pay'
+ 		get 'execute'
+ end
+end 
 
  root to: 'products#index'
  devise_for :users
