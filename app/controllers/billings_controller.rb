@@ -17,10 +17,10 @@ class BillingsController < ApplicationController
 	  		:payer =>  {
 	 		:payment_method =>  "paypal" },
 	  		:redirect_urls => {
-	    	#:return_url => "http://localhost:3000/billings/execute",
-	    	#:cancel_url => "http://localhost:3000/" },
-	    	:return_url => "https://ancient-peak-20736.herokuapp.com/billings/execute",
-	    	:cancel_url => "https://ancient-peak-20736.herokuapp.com/" },
+	    	:return_url => "http://localhost:3000/billings/execute",
+	    	:cancel_url => "http://localhost:3000/" },
+	    	#:return_url => "https://ancient-peak-20736.herokuapp.com/billings/execute",
+	    	#:cancel_url => "https://ancient-peak-20736.herokuapp.com/" },
 	  		:transactions =>  [{
 	    	:item_list => {
 	     	:items => items
