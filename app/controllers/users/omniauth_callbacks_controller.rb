@@ -12,16 +12,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 		puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 
 		if @user.persisted?
-			sign_in_and_redirect @user, event: :authentication
-			set_flash_message(:notice, :success, kind: "Facebook") if is_navigational_format?
+			sign_in_and_redirect @user
+			set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
 		else
-			session["devise.facebook_data"] = request.env["omniauth.auth"]
 			redirect_to root_path, notice: 'Error al iniciar sesión en Facebook.'
 		end 
 		
-	end
-
-	def failure
-		redirect_to root_path
 	end
 end 
