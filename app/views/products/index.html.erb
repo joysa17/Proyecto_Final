@@ -9,7 +9,7 @@
 		  	  <div class="body">			 
 				 <h5><%= product.name%></h5>
 				 <p><%= product.price %></p>
-				 <%= link_to "comprar", product_orders_path(product), class: 'btn btn-success', method: :post %>
+				 <%= link_to "Comprar", product_orders_path(product), class: 'btn btn-success', method: :post %>
 			  </div>
 			</div>
 	       </div>
@@ -19,6 +19,42 @@
 	</div>
 </div>
 
-<footer>
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.393649757302!2d-70.62057344954661!3d-33.4390493042183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf7f0bf2766b%3A0x3b9d62e2ef6661e1!2sJos%C3%A9+Miguel+Claro+1074%2C+Providencia%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses-419!2scl!4v1520093667876" width="400" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+<footer id="footer">
+	<div class="container">
+		<div class="col-md-4">
+			<form action="">
+				<div class="row">
+					
+					<div class="row">
+					    <div class="col-md-5 col-sm-5 col-xs-12">
+					      <span>Nombre</span>
+					      <input type="text" class="form-control" placeholder="Nombre">
+					    </div>
+					    <div class="col-md-6">
+					      <span>Apellido</span>
+					      <input type="text" class="form-control" placeholder="Apellido">
+					    </div>
+					    <div class="col-md-12">
+					      <span>Correo</span>
+					      <input type="text" class="form-control" placeholder="Correo">
+					    </div>
+					    <div class="col-md-12">
+					      <span>Teléfono</span>
+					      <input type="text" class="form-control" placeholder="Teléfono">
+					    </div>
+				    </div>
+				    <br>
+			</form>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<button type="button" class="btn btn-success">ENVIAR</button>
+			</div>
+		</div>	
+		
+		<div class="col-md-4">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.393649757302!2d-70.62057344954661!3d-33.4390493042183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf7f0bf2766b%3A0x3b9d62e2ef6661e1!2sJos%C3%A9+Miguel+Claro+1074%2C+Providencia%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses-419!2scl!4v1520093667876" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+		</div>
+
+	</div>
 </footer>
