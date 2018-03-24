@@ -22,7 +22,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in?%>
-        <li><a href="#">Bienvenido(a): <%= current_user.name %></a></li>
+        <li><a href="#">Bienvenido(a): <%= current_user %></a></li>
       		<% else %>
          <li><a href="<%=new_user_session_path%>">Ingreso</a></li>
           <% end %>
