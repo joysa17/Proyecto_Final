@@ -1,32 +1,39 @@
-<h1>Productos</h1>
-<div class="container">
-	<div class="row">
-	 <% @products.each_slice(4) do |row| %>
-	  <% row.each do |product|%>
-		  <div class="col-md-3">
-		  	<div class="card">
-		  	 <%= image_tag product.photo, size: '200x200' %>
-		  	  <div class="body">			 
-				 <h5><%= product.name%></h5>
-				 <p><%= product.price %></p>
-				 <%= link_to "Comprar", product_orders_path(product), class: 'btn btn-success', method: :post %>
-			  </div>
-			</div>
+<div class="jumbotron">
+  <div class="container">
+    <h2 align="center">Productos</h2> 
+  </div>
+</div>
+
+<div class="flex-section-container" >
+	<div class="container">
+		 <% @products.each_slice(4) do |row| %>			
+		  <div class="row" id='products_row'>
+		  <% row.each do |product|%>
+			  <div class="col-md-3">
+			  	<%= image_tag product.photo, size: '250x250' %>
+			    <p><%= product.name%></p>
+				<p>$<%= product.price %></p>
+				<%= link_to "Comprar", product_orders_path(product), class: 'btn btn-info', method: :post %>
+			   </div>
+		  	  <% end %>
 	       </div>
-	  	  <% end %>
-	  	<div class="w-100" style="margin-top:20px"></div>
-	  <% end %>
+	    <% end %>		
 	</div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h2 align="center">Información</h2> 
+  </div>
 </div>
 
 <footer id="footer">
 	<div class="container">
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<form action="">
-				<div class="row">
-					
+				<div class="row">					
 					<div class="row">
-					    <div class="col-md-5 col-sm-5 col-xs-12">
+					    <div class="col-md-6">
 					      <span>Nombre</span>
 					      <input type="text" class="form-control" placeholder="Nombre">
 					    </div>
@@ -42,19 +49,73 @@
 					      <span>Teléfono</span>
 					      <input type="text" class="form-control" placeholder="Teléfono">
 					    </div>
+					    <div class="col-md-12">
+					      <span>Mensaje</span>
+					      <input type="text" class="form-control" placeholder="Mensaje">
+					    </div>
 				    </div>
 				    <br>
 			</form>
 		</div>
 		<div class="row">
 			<div class="col-md-4">
-				<button type="button" class="btn btn-success">ENVIAR</button>
+				<button type="button" class="btn btn-info">ENVIAR</button>
 			</div>
 		</div>	
-		
-		<div class="col-md-4">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.393649757302!2d-70.62057344954661!3d-33.4390493042183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf7f0bf2766b%3A0x3b9d62e2ef6661e1!2sJos%C3%A9+Miguel+Claro+1074%2C+Providencia%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses-419!2scl!4v1520093667876" width="300" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+	<div class="col-md-5">
+		<div class="redes-sociales">
+			<h3>Información de contacto</h3>
+				<ul>
+				    <li>
+					 	<a href="http://www.facebook.com" target="_blank">
+					   		<%= image_tag 'facebook.png', width: 60, height: 60%>
+					 	</a>
+					</li>
+					<li>
+					 	<a href="http://www.twitter.com" target="_blank">	
+					   		<%= image_tag 'twitter.png', width: 60, height: 60%>
+					    </a>
+					</li>
+				
+					<li>
+						<a href="http://www.linkedin.com" target="_blank">
+						   <%= image_tag 'linkedin.png', width: 60, height: 60%>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.instagram.com" target="_blank">
+						   <%= image_tag 'instagram.png', width: 60, height: 60%>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.youtube.com" target="_blank">
+						   	<%= image_tag 'youtube.png', width: 60, height: 60%>
+						</a>
+					</li>
+				</ul>
 		</div>
+		<div class="direccion">
+			<div class="direccion">
+				<span class="glyphicon glyphicon-map-marker"></span>
+				Miguel Claro 1074, Providencia
+			</div>
+		</div>
+		<div class="email">
+			<div class="email">
+				<span class="glyphicon glyphicon-envelope"></span>
+				  <a href="mail:ayuda@shoppingcart.cl">ayuda@shoppingcart.cl</a>
+			</div>
+		</div>
+		<div class="telefono">
+			<div class="telefono">
+				<span class="glyphicon glyphicon-earphone"></span>
+				<a href="tel: + 56 9 1234 5678">+ 56 9 1234 5678</a>
+			</div>
+		</div>
+	</div>
 
+	<div class="col-md-4">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.393649757302!2d-70.62057344954661!3d-33.4390493042183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf7f0bf2766b%3A0x3b9d62e2ef6661e1!2sJos%C3%A9+Miguel+Claro+1074%2C+Providencia%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses-419!2scl!4v1520093667876" width="350" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</div>
 </footer>

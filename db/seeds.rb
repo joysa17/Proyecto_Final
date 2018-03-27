@@ -15,6 +15,7 @@ AdminUser.destroy_all
 		name: Faker::Commerce.product_name,
 		price: Faker::Commerce.price.to_i,
 		photo: "https://loremflickr.com/320/240?random=#{i + 1}"
+		#http://placeimg.com/200/200/tech
 		)
 end
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
