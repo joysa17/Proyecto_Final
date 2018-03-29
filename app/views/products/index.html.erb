@@ -10,7 +10,7 @@
 		  <div class="row" id='products_row'>
 		  <% row.each do |product|%>
 			  <div class="col-md-3">
-			  	<%= image_tag product.photo, size: '250x250' %>
+			    <%= image_tag product.photo, size: '250x250' %>
 			    <p><%= product.name%></p>
 				<p>$<%= product.price %></p>
 				<%= link_to "Comprar", product_orders_path(product), class: 'btn btn-info', method: :post %>
@@ -51,7 +51,7 @@
 					    </div>
 					    <div class="col-md-12">
 					      <span>Mensaje</span>
-					      <input type="text" class="form-control" placeholder="Mensaje">
+					      <textarea class="form-control" rows="3" placeholder="Escribe aquí tu mensaje..."></textarea>
 					    </div>
 				    </div>
 				    <br>
