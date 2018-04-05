@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'contact/new'
+
+  get 'contact/create'
+
+  resources :contacts, only: [:new, :create] 
   resources :comments
   resources :posts
   devise_for :admin_users, ActiveAdmin::Devise.config
