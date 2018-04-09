@@ -19,7 +19,11 @@
       <ul class="nav navbar-nav">
         <li><a href="<%= payed_orders_path%>">Compras</a></li>
       </ul>
-      
+      <%if user_signed_in?%>
+      <ul class="nav navbar-nav">
+        <li><a href="<%=admin_root_path%>">Admin</a><li>
+      </ul>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in?%>
         <li><a href="#">Bienvenido(a): <%= current_user.email %></a></li>

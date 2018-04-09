@@ -20,7 +20,7 @@ AdminUser.destroy_all
 		#http://placeimg.com/200/200/tech
 		)
 end
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'joselin.solis.3b@gmail.com', password: '123456', password_confirmation: '123456') if Rails.env.development?
 
 10.times do |i|
 	User.create(email:"usuario#{i}@gmail.com", password: '123456')

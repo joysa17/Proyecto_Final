@@ -90,6 +90,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => "https://ancient-peak-20736.herokuapp.com/", :port => 1025 }
+  config.action_mailer.smtp_settings = { :address => "https://ancient-peak-20736.herokuapp.com/" }
   
 end
