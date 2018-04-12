@@ -8,9 +8,9 @@ class OrdersController < ApplicationController
     @order.quantity += 1
 
   	if @order.save
-  		redirect_to products_path, notice: 'La orden ha sido ingresada'
+  		redirect_to products_path, notice: 'El producto ha sido añadido al carro de compras'
   	else
-  		redirect_to products_path, alert: 'La orden no ha podido ser ingresada'
+  		redirect_to products_path, alert: 'El producto no ha sido añadido al carro de compras'
   	end
   end
 

@@ -1,21 +1,25 @@
 <div class="container">
-  <% if @orders.count > 0 %>
+ 
     <table class="table">
     <thead>
       <tr>
-        <th>Producto</th>
-        <th>Valor</th>
-        <th>Cantidad</th>
+        <th>Número de orden</th>
+        <th>Cantidad de productos</th>
         <th>Total</th>
+        <th>Estado</th>
       </tr>
     </thead>
     <tbody>
       <% @orders.each do |order| %>
         <tr>
-          <td> <%= order.product.name %> </td>
-          <td> <%= order.price %></td>
+          <td> <%= order.billing_id %> </td>
           <td> <%= order.quantity %> </td>
           <td> <%= order.price * order.quantity %></td>
+          <% if order.payed = true %>
+            <td> Pagado</td>
+          <% else %>
+            <td> No Pagado</td>
+          <% end %>
         </tr>
       <% end %>
       <tr class="table-dark">
@@ -24,5 +28,5 @@
       </tr>
     </tbody>
   </table>
-  <% end %>
+
 </div>
