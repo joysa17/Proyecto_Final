@@ -22,7 +22,9 @@ class OrdersController < ApplicationController
 
   def payed
     @orders = current_user.orders.payed
-    @total = @orders.get_total
+   #@total = @orders.get_total
+    @orders_id = @orders.pluck(:billing_id).uniq!
+    
   end
 
   def clean

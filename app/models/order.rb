@@ -9,4 +9,10 @@ class Order < ApplicationRecord
   def self.get_total
  	pluck("price * quantity").sum()
   end 
+
+  def self.total_quantity
+  	pluck("quantity").sum()
+  end
+
+ 
 end

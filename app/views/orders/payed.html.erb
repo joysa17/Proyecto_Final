@@ -1,32 +1,30 @@
+<div class="jumbotron">
+  <div class="container">
+    <h2 align="center">Compras realizadas</h2> 
+  </div>
+</div>
+
 <div class="container">
  
-    <table class="table">
+ <table class="table table-bordered">
     <thead>
       <tr>
         <th>Número de orden</th>
         <th>Cantidad de productos</th>
         <th>Total</th>
-        <th>Estado</th>
       </tr>
     </thead>
     <tbody>
-      <% @orders.each do |order| %>
-        <tr>
-          <td> <%= order.billing_id %> </td>
-          <td> <%= order.quantity %> </td>
-          <td> <%= order.price * order.quantity %></td>
-          <% if order.payed = true %>
-            <td> Pagado</td>
-          <% else %>
-            <td> No Pagado</td>
-          <% end %>
-        </tr>
-      <% end %>
-      <tr class="table-dark">
-      <td></td>
-      <td></td>
-      </tr>
+       <% @orders_id.each do |id| %>
+          <tr>
+            <td> <%= id %> </td>
+            <td> <%= @orders.where(billing_id: id).total_quantity %> </td>
+            <td> <%= @orders.where(billing_id: id).get_total%></td>   
+          </tr>
+        <%end%>
     </tbody>
   </table>
+
+
 
 </div>

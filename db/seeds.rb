@@ -22,19 +22,5 @@ AdminUser.destroy_all
 end
 AdminUser.create!(email: 'joselin.solis.3b@gmail.com', password: '123456', password_confirmation: '123456')
 
-10.times do |i|
-	User.create(email:"usuario#{i}@gmail.com", password: '123456')
-end 
 
-10.times do |i|
-	Post.create(
-		user: User.order("RANDOM()").first,
-		title:Faker::Lorem.sentence,
-		content: Faker::Lorem.paragraph)
-end
 
-20.times do |i|
-	Comment.create(
-		post: Post.order("RANDOM()").first,
-		content: Faker::Lorem.paragraph)
-end
