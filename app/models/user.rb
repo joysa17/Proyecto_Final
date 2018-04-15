@@ -17,4 +17,8 @@ class User < ApplicationRecord
 		 #user.name = auth.info.name
 		end
 	end
+
+	def is_admin?
+    	current_user.admin == 1
+ 	end
 end

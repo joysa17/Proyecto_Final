@@ -1,0 +1,43 @@
+<div class="col-md-4">
+	
+</div>
+<div class="col-md-3">
+			<div class="row">
+				<%= form_for @contact do |f| %>
+				<div class="row">
+					<div class="col-md-6">
+						<%= f.label :name, "Nombre" %><br>
+						<%= f.text_field :name, required: true , class:'form-control' %>
+					</div>
+					<div class="col-md-6">
+						<%= f.label :surname, "Apellido" %><br>
+						<%= f.text_field :surname, required: true, class:'form-control' %>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+						<%= f.label :email, "Email" %><br>
+						<%= f.text_field :email, required: true, class:'form-control' %>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+						<%= f.label :phone, "Teléfono" %><br>
+						<%= f.text_field :phone, required: true, class:'form-control' %>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+						<%= f.label :message, "Mensaje" %><br>
+						<%= f.text_area :message, required: true, class:'form-control' %>
+					</div>
+				</div>
+				<div class="row">
+					<div >
+					<br>
+						<%= f.submit "Enviar", class: 'btn btn-info'%>
+					</div>
+				</div>	
+			<% end %>
+			</div>
+		</div>

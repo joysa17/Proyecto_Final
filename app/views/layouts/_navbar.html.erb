@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<%= products_path%>">Shopping Cart</a>
+      <a class="navbar-brand" href="<%= products_path%>">JoySA Shopping</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,12 +18,15 @@
       </ul>
       <ul class="nav navbar-nav">
         <li><a href="<%= payed_orders_path%>">Ordenes de compra</a></li>
-      </ul>
-      <%if user_signed_in?%>
+      </ul>     
       <ul class="nav navbar-nav">
-        <li><a href="<%=admin_root_path%>">Admin</a><li>
+        <li><a href="<%= new_contact_path%>">Contacto</a></li>
       </ul>
-      <% end %>
+      <ul class="nav navbar-nav">
+       <%if current_user.try(:admin?) %>
+         <li><a href="<%=admin_root_path%>">Admin</a><li>
+       <% end %>
+      </ul>     
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in?%>
         <li><a href="#">Bienvenido(a): <%= current_user.email %></a></li>
