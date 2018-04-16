@@ -22,5 +22,5 @@ AdminUser.destroy_all
 end
 AdminUser.create!(email: 'joselin.solis.3b@gmail.com', password: '123456', password_confirmation: '123456')
 
-
+User.create!( email: 'joselin.solis.3b@gmail.com', password:'123456', admin:'true')
 
