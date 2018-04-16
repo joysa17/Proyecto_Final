@@ -63,7 +63,7 @@
 				<div class="row">
 					<div >
 					<br>
-						<%= f.submit "Enviar", class: 'btn btn-info'%>
+						<%= f.submit "Enviar", class: 'btn btn-info', onclick:'limpiarFormulario()' %>
 					</div>
 				</div>	
 			<% end %>
@@ -129,3 +129,9 @@
 	</div>
 </footer>
 
+<script>
+  function limpiarFormulario() {
+    document.getElementById("new_contact").reset();
+    alert('El mensaje fue enviado.')
+  }
+</script>
