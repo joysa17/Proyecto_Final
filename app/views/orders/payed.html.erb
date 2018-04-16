@@ -5,8 +5,8 @@
 </div>
 
 <div class="container">
- 
- <table class="table table-bordered">
+<% if @orders.count > 0 %>
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Número de orden</th>
@@ -25,6 +25,7 @@
     </tbody>
   </table>
 
-
-
+  <% else %>
+    <p>No tienes Ordenes de compra.</p>
+  <% end %>
 </div>
